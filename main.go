@@ -40,11 +40,11 @@ func main() {
 
 	go printCommandEvents(bot.CommandEvents())
 
-	var theArray []string = []string{"Who is the president of Ukraine"}
+	var arrayOfExamples []string = []string{"Who is the president of Ukraine"}
 
 	bot.Command("query for bot - <message>", &slacker.CommandDefinition{
 		Description: "Send any question to wolfram",
-		Examples:    theArray,
+		Examples:    arrayOfExamples,
 		Handler: func(botContext slacker.BotContext, request slacker.Request, writer slacker.ResponseWriter) {
 			query := request.Param("message")
 			fmt.Println(query)
